@@ -10,6 +10,7 @@ public class DriverManager {
 
     public static WebDriver driver;
 
+
     public void openBrowser(){
         driver = new FirefoxDriver();
 //        driver.get("https://github.com/");

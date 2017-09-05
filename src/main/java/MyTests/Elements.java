@@ -4,8 +4,14 @@ import org.openqa.selenium.By;
 
 public class Elements extends DriverManager {
 
-        public void goToPage(String page){
+
+    public void goToPage(String page){
                 driver.get(page);
+    }
+
+    public void openPage(String page){
+        page = driver.getCurrentUrl() + page;
+        driver.get(page);
     }
 
     public void clickOnButtonByXpath(String elementXpath){
@@ -14,6 +20,10 @@ public class Elements extends DriverManager {
 
     public void enterTextToFieldByXpath(String elementXpath, String text){
         driver.findElement(By.xpath(elementXpath)).sendKeys(text);
+    }
+
+    public void enterTextToFieldByCssSelector(String elementCss, String text){
+        driver.findElement(By.cssSelector(elementCss)).sendKeys(text);
     }
 
     public String getElementTextByXpath(String elementXpath){
@@ -27,4 +37,5 @@ public class Elements extends DriverManager {
     public void clickOnButtonByCSSselector(String cssSelector){
         driver.findElement(By.cssSelector(cssSelector)).click();
     }
+
 }
